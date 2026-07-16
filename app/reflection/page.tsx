@@ -39,13 +39,18 @@ const challenges = [
 
 export default function Reflection() {
   return (
-    <section className="thematic-section theme-saturn section pt-0">
+    <section className="thematic-section theme-saturn reflection-page section pt-0">
       <div className="planet-focus-hero">
         <div className="container planet-focus-grid">
           <Reveal className="planet-focus-copy">
             <p className="eyebrow">Tổng kết hành trình</p>
             <h1 className="mt-5 text-5xl font-semibold tracking-[-.08em] md:text-7xl">Điều còn lại sau <span className="text-[var(--accent)]">sáu bài tập.</span></h1>
             <p className="muted mt-7 max-w-md text-base leading-7 md:text-lg md:leading-8">Một bản tự đánh giá về kiến thức, thói quen và trách nhiệm của mình khi học tập trong môi trường số.</p>
+            <div className="reflection-hero-stats" aria-label="Tổng quan quá trình học">
+              <div><strong>06</strong><span>bài đã hoàn thành</span></div>
+              <div><strong>41</strong><span>trang minh chứng</span></div>
+              <div><strong>01</strong><span>quy trình cá nhân</span></div>
+            </div>
           </Reveal>
           <Reveal className="planet-focus-legend" delay={.14}><PlanetLegend /></Reveal>
         </div>

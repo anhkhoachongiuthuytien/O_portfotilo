@@ -2,11 +2,18 @@ import { PlanetLegend } from "@/src/components/PlanetLegend";
 import { ProjectExplorer } from "@/src/components/ProjectExplorer";
 import { MagneticLink } from "@/src/components/SectionSignatures";
 import { Reveal } from "@/src/components/VisualEffects";
+import { projects } from "@/src/data/portfolio";
+
+const projectStats = [
+  { value: String(projects.length).padStart(2, "0"), label: "hồ sơ hoàn chỉnh" },
+  { value: String(projects.reduce((total, project) => total + project.document.pages, 0)), label: "trang bài nộp" },
+  { value: "03", label: "trục năng lực" },
+];
 
 export default function Projects() {
   return (
     <>
-      <section className="thematic-section theme-earth section pt-0">
+      <section className="thematic-section theme-earth projects-page section pt-0">
         <div className="planet-focus-hero">
           <div className="container planet-focus-grid">
           <Reveal className="planet-focus-copy">
@@ -17,6 +24,9 @@ export default function Projects() {
             <p className="muted mt-7 max-w-md text-base leading-7 md:text-lg md:leading-8">
               Mỗi hồ sơ ghi lại mục tiêu, quy trình, công cụ, kết quả và toàn bộ bài nộp gốc — có thể đọc trực tiếp ngay trên website.
             </p>
+            <div className="projects-hero-stats" aria-label="Tổng quan hồ sơ">
+              {projectStats.map((stat) => <div key={stat.label}><strong>{stat.value}</strong><span>{stat.label}</span></div>)}
+            </div>
           </Reveal>
           <Reveal className="planet-focus-legend" delay={.14}><PlanetLegend /></Reveal>
           </div>
@@ -26,7 +36,7 @@ export default function Projects() {
         </div>
       </section>
 
-      <section className="thematic-section theme-saturn section pt-4">
+      <section className="thematic-section theme-saturn projects-next-chapter section pt-4">
         <div className="container">
           <Reveal>
             <div className="card-shell">

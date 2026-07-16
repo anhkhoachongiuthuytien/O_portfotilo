@@ -23,6 +23,10 @@ export function ProjectExplorer() {
   return <>
     <Reveal delay={.1} className="mt-12">
       <div className="projects-control-rail">
+        <div className="projects-control-heading">
+          <div><p className="eyebrow">Bản đồ hồ sơ</p><h2>Chọn kỹ năng muốn khám phá</h2></div>
+          <span>{projects.length} bài</span>
+        </div>
         <div className="projects-control-primary">
           <label className="project-search glass">
             <Search size={18} className="muted" strokeWidth={1.5} />

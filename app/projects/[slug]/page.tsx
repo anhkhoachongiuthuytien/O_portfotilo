@@ -87,5 +87,5 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
 }
 
 function DetailSection({ id, number, title, children, wide = false }: { id: string; number: string; title: string; children: React.ReactNode; wide?: boolean }) {
-  return <section id={id} className="detail-section scroll-mt-32"><div className="detail-section-heading"><span>{number}</span><h2>{title}</h2></div><div className={`detail-section-body ${wide ? "detail-section-body-wide" : ""}`}>{children}</div></section>;
+  return <section id={id} className={`detail-section scroll-mt-32 ${wide ? "detail-section-wide" : ""}`}><div className="detail-section-heading"><span>{number}</span><h2>{title}</h2></div><div className={`detail-section-body ${wide ? "detail-section-body-wide" : ""}`}>{children}</div></section>;
 }

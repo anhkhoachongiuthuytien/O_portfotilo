@@ -708,3 +708,72 @@ p { text-wrap: pretty; }
   html[data-ambient="earth"] .galaxy-canvas { opacity: .78; }
   html[data-ambient="earth"] .solar-haze { opacity: .58; }
 }
+
+/* Detail reading surface: let the submitted work breathe across the article column. */
+.detail-section-wide { row-gap: 1.25rem; }
+.detail-section-wide .detail-section-heading h2 { max-width: none; }
+.detail-section-wide .detail-section-body { max-width: none; }
+.document-viewer { border-radius: 28px; background: color-mix(in srgb, var(--planet-color), #090b18 86%); box-shadow: 0 34px 110px color-mix(in srgb, var(--planet-color), transparent 91%); }
+.document-viewer-core { background: linear-gradient(145deg, color-mix(in srgb, var(--planet-color), #111326 84%), rgba(9, 11, 24, .98)); }
+.document-viewer-header { padding: 1.2rem 1.35rem; background: linear-gradient(110deg, color-mix(in srgb, var(--planet-color), transparent 92%), transparent 60%); }
+.document-viewer-frame { min-height: 720px; }
+
+/* Projects: an oceanic Earth archive with quieter surfaces and clearer scanning hierarchy. */
+.projects-page { --section-accent: #7de3c7; --accent: var(--section-accent); --accent-strong: #3db9ab; --accent-ink: #06251f; --ambient-rgb: 77 190 177; }
+.projects-page::before { top: 12%; left: -20rem; width: 48rem; height: 48rem; background: radial-gradient(circle at 58% 45%, rgba(47, 188, 174, .2), rgba(33, 98, 156, .09) 34%, transparent 68%); filter: blur(26px); }
+.projects-page::after { right: 4%; bottom: 10%; width: 30rem; height: 14rem; border: 1px solid rgba(125, 227, 199, .15); border-radius: 50%; box-shadow: 0 0 90px rgba(52, 172, 185, .09); transform: rotate(-14deg); }
+.projects-page .planet-focus-copy { position: relative; }
+.projects-page .planet-focus-copy::before { position: absolute; top: -2.5rem; left: -1.2rem; width: 3px; height: 8.5rem; border-radius: 999px; background: linear-gradient(to bottom, var(--accent), transparent); box-shadow: 0 0 26px color-mix(in srgb, var(--accent), transparent 32%); content: ""; opacity: .7; }
+.projects-hero-stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); max-width: 31rem; margin-top: 2.25rem; border-top: 1px solid color-mix(in srgb, var(--accent), transparent 70%); border-bottom: 1px solid color-mix(in srgb, var(--accent), transparent 82%); }
+.projects-hero-stats div { display: grid; gap: .2rem; padding: .85rem .9rem .9rem 0; }
+.projects-hero-stats div + div { padding-left: .9rem; border-left: 1px solid color-mix(in srgb, var(--accent), transparent 82%); }
+.projects-hero-stats strong { color: var(--text); font-family: var(--font-mono, ui-monospace), monospace; font-size: 1.4rem; font-weight: 600; letter-spacing: -.04em; }
+.projects-hero-stats span { color: var(--muted); font-size: .65rem; line-height: 1.35; }
+.projects-page .planet-focus-legend .planet-legend { border-color: rgba(125, 227, 199, .19); background: linear-gradient(145deg, rgba(9, 35, 43, .8), rgba(7, 17, 30, .66)); }
+.projects-control-rail { border-color: rgba(125, 227, 199, .22); background: linear-gradient(135deg, rgba(9, 43, 50, .78), rgba(9, 18, 32, .82) 58%, rgba(30, 23, 28, .7)); box-shadow: inset 0 1px 0 rgba(255,255,255,.09), 0 24px 80px rgba(10, 34, 46, .18); }
+.projects-control-heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 1rem; padding: .4rem .55rem .8rem; }
+.projects-control-heading h2 { margin-top: .3rem; color: var(--text); font-size: 1.05rem; font-weight: 600; letter-spacing: -.035em; }
+.projects-control-heading > span { color: var(--section-accent); font-family: var(--font-mono, ui-monospace), monospace; font-size: .65rem; letter-spacing: .1em; text-transform: uppercase; }
+.projects-page .card-shell { border-color: color-mix(in srgb, var(--planet-color), transparent 68%); }
+.projects-page .project-card { background: linear-gradient(145deg, color-mix(in srgb, var(--planet-color), #101526 88%), rgba(9, 15, 27, .98)); box-shadow: inset 0 1px 0 rgba(255,255,255,.06), 0 22px 60px color-mix(in srgb, var(--planet-color), transparent 94%); }
+.projects-page .project-card-content { padding-top: 1.15rem; }
+.projects-page .project-card-copy h3 { color: color-mix(in srgb, var(--text), white 6%); }
+.projects-page .project-card-copy p { max-width: 48ch; color: color-mix(in srgb, var(--muted), white 8%); }
+.projects-page .timeline-item .card-core { background: linear-gradient(145deg, color-mix(in srgb, var(--planet-color), #101526 88%), rgba(9, 15, 27, .98)); }
+.projects-next-chapter .card-shell { border-color: rgba(242, 200, 121, .24); }
+.projects-next-chapter .card-core { background: radial-gradient(circle at 92% 20%, rgba(239, 186, 99, .16), transparent 34%), linear-gradient(135deg, rgba(55, 41, 29, .94), rgba(17, 19, 29, .98)); }
+
+/* Reflection: a lunar palette, slower contrast and stronger reading moments. */
+.reflection-page { --section-accent: #c8b9ff; --accent: var(--section-accent); --accent-strong: #9e8ae9; --accent-ink: #19132c; --ambient-rgb: 164 145 232; }
+.reflection-page::before { right: -14rem; top: -9rem; width: 48rem; height: 48rem; background: radial-gradient(circle at 36% 34%, rgba(203, 188, 255, .2), rgba(73, 83, 163, .12) 34%, transparent 70%); filter: blur(24px); }
+.reflection-page::after { left: 7%; bottom: 10%; width: 17rem; height: 6rem; border-color: rgba(200, 185, 255, .24); box-shadow: 0 0 80px rgba(161, 145, 232, .13); }
+.reflection-page .planet-focus-copy::before { position: absolute; top: -2.5rem; left: -1.2rem; width: 3px; height: 8.5rem; border-radius: 999px; background: linear-gradient(to bottom, var(--accent), transparent); box-shadow: 0 0 24px rgba(200, 185, 255, .36); content: ""; opacity: .7; }
+.reflection-page .planet-focus-legend .planet-legend { border-color: rgba(200, 185, 255, .2); background: linear-gradient(145deg, rgba(31, 29, 62, .82), rgba(11, 17, 35, .7)); }
+.reflection-hero-stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); max-width: 31rem; margin-top: 2.25rem; border-top: 1px solid color-mix(in srgb, var(--accent), transparent 70%); border-bottom: 1px solid color-mix(in srgb, var(--accent), transparent 82%); }
+.reflection-hero-stats div { display: grid; gap: .2rem; padding: .85rem .9rem .9rem 0; }
+.reflection-hero-stats div + div { padding-left: .9rem; border-left: 1px solid color-mix(in srgb, var(--accent), transparent 82%); }
+.reflection-hero-stats strong { color: var(--text); font-family: var(--font-mono, ui-monospace), monospace; font-size: 1.4rem; font-weight: 600; letter-spacing: -.04em; }
+.reflection-hero-stats span { color: var(--muted); font-size: .65rem; line-height: 1.35; }
+.reflection-page .reflection-summary-sticky { border-left: 2px solid color-mix(in srgb, var(--accent), transparent 35%); padding-left: 1.25rem; }
+.reflection-page .saturn-journey-card { border-color: rgba(200, 185, 255, .18); }
+.reflection-page .saturn-journey-card:nth-child(1) { --accent: #90d6d2; }
+.reflection-page .saturn-journey-card:nth-child(2) { --accent: #b7a6ff; }
+.reflection-page .saturn-journey-card:nth-child(3) { --accent: #f0cf93; }
+.reflection-page .saturn-journey-card .card-core { background: linear-gradient(145deg, rgba(32, 31, 62, .9), rgba(14, 17, 32, .97)); }
+.reflection-page .reflection-challenge-panel { border-color: rgba(200, 185, 255, .22); }
+.reflection-page .reflection-challenge-panel .card-core { background: linear-gradient(145deg, rgba(37, 33, 70, .86), rgba(13, 17, 34, .98)); }
+.reflection-page .reflection-direction-grid .card-shell { border-color: rgba(200, 185, 255, .18); }
+.reflection-page .reflection-direction-grid .card-core { background: linear-gradient(145deg, rgba(25, 28, 58, .86), rgba(13, 17, 32, .98)); }
+
+@media (min-width: 960px) {
+  .detail-section-wide { grid-template-columns: minmax(0, 1fr); gap: 1.35rem; }
+  .detail-section-wide .detail-section-heading { align-items: baseline; }
+  .detail-section-wide .detail-section-heading h2 { font-size: clamp(1.55rem, 2vw, 2rem); }
+}
+
+@media (max-width: 639px) {
+  .projects-hero-stats, .reflection-hero-stats { max-width: none; }
+  .projects-hero-stats div, .reflection-hero-stats div { padding-right: .55rem; }
+  .projects-hero-stats div + div, .reflection-hero-stats div + div { padding-left: .55rem; }
+  .projects-control-heading { align-items: flex-start; flex-direction: column; gap: .25rem; }
+}
