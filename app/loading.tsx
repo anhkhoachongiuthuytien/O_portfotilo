@@ -1,0 +1,3 @@
+export default function Loading() {
+  return <section className="thematic-section theme-cyan section" aria-label="Đang tải nội dung" aria-busy="true"><div className="container loading-shell"><div className="skeleton skeleton-kicker" /><div className="skeleton skeleton-title" /><div className="skeleton skeleton-title skeleton-title-short" /><div className="skeleton skeleton-copy" /><div className="loading-grid" aria-hidden="true"><div className="skeleton skeleton-card" /><div className="skeleton skeleton-card" /><div className="skeleton skeleton-card" /></div><span className="sr-only">Đang tải nội dung portfolio.</span></div></section>;
+}

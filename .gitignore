@@ -1,0 +1,25 @@
+# Dependencies
+/node_modules
+
+# Next.js output
+/.next
+/out
+
+# Local environment files
+.env*
+!.env.example
+
+# Local tooling and runtime logs
+/.codex-runtime
+/.chrome-qa
+*.log
+
+# TypeScript and editor files
+*.tsbuildinfo
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Vercel local metadata
+.vercel
