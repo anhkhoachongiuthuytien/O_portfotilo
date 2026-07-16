@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { projects } from "@/src/data/portfolio";
 import { DocumentViewer } from "@/src/components/DocumentViewer";
+import { EvidenceGallery } from "@/src/components/EvidenceGallery";
 import { ProjectTableOfContents } from "@/src/components/ProjectTableOfContents";
 import { Reveal } from "@/src/components/VisualEffects";
 import { getPlanetForDetail } from "@/src/data/planets";
@@ -73,7 +74,7 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
               <DetailSection id="context" number="02" title="Bối cảnh"><p>{project.context}</p></DetailSection>
               <DetailSection id="process" number="03" title="Quá trình thực hiện"><ol className="detail-process-list">{project.process.map((item, itemIndex) => <li key={item}><span className="detail-process-number">0{itemIndex + 1}</span><span>{item}</span></li>)}</ol></DetailSection>
               <DetailSection id="tools" number="04" title="Công cụ đã sử dụng"><div className="detail-tool-list">{project.tools.map((tool) => <span key={tool}>{tool}</span>)}</div></DetailSection>
-              <DetailSection id="result" number="05" title="Kết quả và minh chứng"><p>{project.result}</p><ul className="detail-artifact-list">{project.artifacts.map((artifact) => <li key={artifact}>{artifact}</li>)}</ul></DetailSection>
+              <DetailSection id="result" number="05" title="Kết quả và minh chứng" wide={Boolean(project.evidence)}><p>{project.result}</p><ul className="detail-artifact-list">{project.artifacts.map((artifact) => <li key={artifact}>{artifact}</li>)}</ul>{project.evidence ? <EvidenceGallery items={project.evidence} /> : null}</DetailSection>
               <DetailSection id="lessons" number="06" title="Bài học rút ra"><p>{project.lessons}</p></DetailSection>
               <DetailSection id="document" number="07" title="Bài nộp đầy đủ" wide><DocumentViewer document={project.document} title={project.title} /></DetailSection>
             </div>

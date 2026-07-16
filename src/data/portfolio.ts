@@ -25,6 +25,14 @@ export type ProjectDocument = {
   pages: number;
 };
 
+export type EvidenceImage = {
+  src: string;
+  alt: string;
+  caption: string;
+  width: number;
+  height: number;
+};
+
 export type Project = {
   id: number;
   slug: string;
@@ -41,6 +49,7 @@ export type Project = {
   lessons: string;
   tags: string[];
   thumbnail: string;
+  evidence?: EvidenceImage[];
   document: ProjectDocument;
   status: string;
 };
@@ -175,6 +184,20 @@ export const projects: Project[] = [
     lessons: "Prompt tốt không phải là prompt dài nhất. Điều quan trọng là người viết hiểu rõ mục tiêu, cung cấp đủ bối cảnh và biết chia yêu cầu phức tạp thành những bước có thể đánh giá được.",
     tags: ["AI", "Tư duy"],
     thumbnail: "/artwork/project-03-prompt.webp",
+    evidence: [
+      { src: "/evidence/project-03/evidence-01.png", alt: "Phần mục tiêu và bối cảnh nghiên cứu của prompt phân tích văn bản pháp luật", caption: "Mục tiêu và bối cảnh nghiên cứu", width: 446, height: 173 },
+      { src: "/evidence/project-03/evidence-02.png", alt: "Cấu trúc nội dung chính do AI đề xuất cho bài phân tích", caption: "Cấu trúc và nội dung chính", width: 486, height: 238 },
+      { src: "/evidence/project-03/evidence-03.png", alt: "Kết quả AI trình bày mục tiêu nghiên cứu và vấn đề lý luận", caption: "Kết quả sau lần tinh chỉnh thứ nhất", width: 455, height: 275 },
+      { src: "/evidence/project-03/evidence-04.png", alt: "Kết quả AI phân tích tranh luận về chiếm hữu", caption: "Phân tích chuyên sâu theo vai trò", width: 431, height: 255 },
+      { src: "/evidence/project-03/evidence-05.png", alt: "Kết quả phân tích học thuật chuyên sâu từ prompt đã nâng cấp", caption: "Đầu ra học thuật chuyên sâu", width: 464, height: 275 },
+      { src: "/evidence/project-03/evidence-06.png", alt: "Sơ đồ hệ thống hóa khái niệm quyền chiếm hữu", caption: "Sơ đồ hóa cấu trúc kiến thức", width: 411, height: 266 },
+      { src: "/evidence/project-03/evidence-07.png", alt: "Kết quả AI giải thích từng thành phần của tài sản", caption: "Giải thích khái niệm theo từng phần", width: 379, height: 206 },
+      { src: "/evidence/project-03/evidence-08.png", alt: "Bảng ví dụ minh họa tổng hợp về các loại tài sản", caption: "Bảng ví dụ minh họa tổng hợp", width: 377, height: 215 },
+      { src: "/evidence/project-03/evidence-09.png", alt: "Kết quả AI giải thích tài sản dưới góc nhìn luật sư", caption: "Thay đổi góc nhìn chuyên môn", width: 401, height: 262 },
+      { src: "/evidence/project-03/evidence-10.png", alt: "Danh sách câu hỏi cơ bản về bảo vệ môi trường", caption: "Bộ câu hỏi ở phiên bản cơ bản", width: 448, height: 200 },
+      { src: "/evidence/project-03/evidence-11.png", alt: "Bộ câu hỏi phân tích và đánh giá về môi trường", caption: "Câu hỏi phân tích và đánh giá", width: 420, height: 251 },
+      { src: "/evidence/project-03/evidence-12.png", alt: "Bộ câu hỏi mở rộng về ô nhiễm và biến đổi khí hậu", caption: "Đầu ra sau khi bổ sung tiêu chí", width: 424, height: 255 },
+    ],
     document: {
       pdfUrl: "/documents/bai-3-viet-prompt.pdf",
       docxUrl: "/documents/bai-3-viet-prompt.docx",

@@ -12,6 +12,7 @@
 # Local tooling and runtime logs
 /.codex-runtime
 /.chrome-qa
+/tmp
 *.log
 
 # TypeScript and editor files
