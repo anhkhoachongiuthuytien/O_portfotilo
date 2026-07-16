@@ -129,11 +129,6 @@ p { text-wrap: pretty; }
 .project-detail-planet-index { position: absolute; top: 1rem; left: 1rem; color: var(--planet-color); font-family: var(--font-mono, ui-monospace), monospace; font-size: .65rem; letter-spacing: .14em; }
 .project-detail-planet-caption { position: absolute; right: 1rem; bottom: 1rem; color: var(--muted); font-size: .66rem; line-height: 1.45; text-align: right; }
 .project-detail-planet-caption b { color: var(--text); font-weight: 600; }
-.project-detail-artwork { isolation: isolate; background: color-mix(in srgb, var(--planet-color), #080b18 82%); box-shadow: 0 34px 100px color-mix(in srgb, var(--planet-color), transparent 88%); }
-.project-detail-artwork::before { position: absolute; inset: 0; z-index: 1; background: radial-gradient(circle at 24% 12%, color-mix(in srgb, var(--planet-color), transparent 50%), transparent 48%), linear-gradient(135deg, color-mix(in srgb, var(--planet-color), transparent 72%), transparent 64%); content: ""; mix-blend-mode: color; opacity: var(--art-tint-opacity, .5); pointer-events: none; }
-.project-detail-artwork::after { position: absolute; inset: 0; z-index: 1; border: 1px solid color-mix(in srgb, var(--planet-color), transparent 65%); background: linear-gradient(180deg, transparent 55%, rgba(5, 7, 16, .78)); content: ""; pointer-events: none; }
-.project-detail-artwork figcaption { background: color-mix(in srgb, var(--planet-color), #080b18 92%); }
-.project-detail-artwork img { filter: var(--art-filter, none); }
 .detail-section { position: relative; display: grid; grid-template-columns: minmax(7rem, .28fr) minmax(0, 1fr); gap: clamp(1.5rem, 4vw, 4rem); border-top: 1px solid color-mix(in srgb, var(--planet-color), transparent 84%); padding-top: 2rem; }
 .detail-section-heading { display: flex; align-items: flex-start; gap: .75rem; }
 .detail-section-heading > span { padding-top: .28rem; color: var(--planet-color); font-family: var(--font-mono, ui-monospace), monospace; font-size: .68rem; letter-spacing: .12em; }
@@ -467,8 +462,6 @@ p { text-wrap: pretty; }
   .project-detail-facts > div { min-height: 0; }
   .project-detail-planet-card { width: min(100%, 22rem); min-height: 280px; justify-self: end; border-radius: 22px 22px 44px 22px; }
   .project-detail-planet-image { width: 66%; }
-  .project-detail-artwork { margin-top: 2rem; border-radius: 18px; }
-  .project-detail-artwork img { aspect-ratio: 4 / 3; }
   .detail-section { grid-template-columns: 1fr; gap: 1rem; padding-top: 1.5rem; }
   .detail-section-heading h2 { max-width: none; }
   .detail-section-body { font-size: 1rem; line-height: 1.75; }
@@ -685,7 +678,6 @@ p { text-wrap: pretty; }
   .project-detail-facts { max-width: 58rem; }
   .project-detail-planet-card { min-height: 390px; }
   .project-detail-planet-image { width: 80%; }
-  .project-detail-artwork { margin-top: 4rem; border-radius: 30px; }
   .detail-section { grid-template-columns: minmax(11rem, 15rem) minmax(0, 1fr); gap: clamp(2rem, 5vw, 6rem); padding-top: 2.75rem; }
   .detail-section-heading h2 { max-width: 11ch; font-size: clamp(1.45rem, 1.8vw, 1.9rem); }
   .detail-section-body { max-width: 62rem; font-size: clamp(1.04rem, 1.2vw, 1.18rem); }

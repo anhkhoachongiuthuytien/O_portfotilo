@@ -68,7 +68,6 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
                 </div>
               </div>
             </Reveal>
-            <Reveal delay={.08}><figure className="project-detail-artwork relative mt-12 overflow-hidden rounded-[24px] border border-white/10"><Image src={project.thumbnail} alt={`Ảnh bìa của ${project.shortTitle}`} width={1600} height={800} className="aspect-[16/8] w-full object-cover" /><figcaption className="muted relative z-10 p-3 text-xs">Ảnh bìa chủ đề · {planet.label}: {planet.note}. Minh chứng đầy đủ nằm trong tài liệu bài nộp bên dưới.</figcaption></figure></Reveal>
             <div className="mt-14 space-y-14">
               <DetailSection id="objective" number="01" title="Mục tiêu"><p>{project.objective}</p></DetailSection>
               <DetailSection id="context" number="02" title="Bối cảnh"><p>{project.context}</p></DetailSection>
