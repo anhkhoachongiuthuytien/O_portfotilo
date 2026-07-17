@@ -1,103 +1,107 @@
-# Digital Portfolio
+# DIGITAL PORTFOLIO
+## MÔ TẢ DỰ ÁN HỌC TẬP & BÁO CÁO THỰC HÀNH
+### MÔN HỌC: NHẬP MÔN CÔNG NGHỆ SỐ VÀ ỨNG DỤNG TRÍ TUỆ NHÂN TẠO (VNU1001)
 
-Portfolio học tập cho môn “Nhập môn Công nghệ số và Ứng dụng Trí tuệ nhân tạo”. Website được xây dựng bằng Next.js App Router, React, TypeScript, Tailwind CSS và Motion.
+---
 
-## Yêu cầu môi trường
+#### THÔNG TIN SINH VIÊN
+- **Họ và tên:** Trịnh Thị Kiều Oanh
+- **Mã số sinh viên (MSSV):** 25041302
+- **Lớp:** 25R1
+- **Ngành học:** Ngôn ngữ và Văn hóa Nga
+- **Trường:** Trường Đại học Ngoại ngữ - Đại học Quốc gia Hà Nội
 
+---
+
+## 1. Giới Thiệu Dự Án
+Website **Digital Portfolio** này là sản phẩm tổng kết toàn bộ quá trình học tập, rèn luyện và thực hành môn học **Nhập môn Công nghệ số và Ứng dụng Trí tuệ nhân tạo (VNU1001)** của Đại học Quốc gia Hà Nội.
+
+Mục tiêu của dự án là xây dựng một trang hồ sơ năng lực số cá nhân cao cấp, thiết kế theo phong cách **Futuristic Galaxy** hiện đại (tím, violet, xanh đêm), tích hợp đầy đủ và hiển thị trực quan các minh chứng kết quả học tập từ 6 bài tập lớn của môn học. Qua đó, thể hiện tư duy số, khả năng giải quyết vấn đề bằng công nghệ và kỹ năng ứng dụng AI một cách an toàn, hiệu quả, có trách nhiệm.
+
+---
+
+## 2. Danh Sách Các Bài Tập & Báo Cáo Thực Hành (Bài 1 - Bài 6)
+Portfolio lưu trữ và giới thiệu chi tiết 6 bài tập thành phần với đầy đủ tài liệu Word (.docx) và PDF minh chứng quá trình thực hiện:
+
+### 📁 Bài tập 1: Thao tác cơ bản với tệp tin và thư mục (Quản lý tệp tin)
+- **Mục tiêu:** Nắm chắc thao tác quản lý dữ liệu cơ bản trên hệ điều hành Windows: tạo mới, đổi tên, sao chép, di chuyển, xóa tạm thời vào Recycle Bin, xóa vĩnh viễn và khôi phục tệp tin.
+- **Công cụ sử dụng:** Windows File Explorer, Notepad, Recycle Bin.
+- **Tài liệu:** [bai-1-quan-ly-tep.docx](file:///d:/fpt_Oanh/public/documents/bai-1-quan-ly-tep.docx) & [bai-1-quan-ly-tep.pdf](file:///d:/fpt_Oanh/public/documents/bai-1-quan-ly-tep.pdf).
+
+### 🔍 Bài tập 2: Tìm kiếm và đánh giá thông tin học thuật (Đánh giá thông tin)
+- **Mục tiêu:** Thiết lập bộ từ khóa song ngữ, tìm kiếm tài liệu trên các cơ sở dữ liệu khoa học lớn (Google Scholar, ScienceDirect, ResearchGate) và đánh giá độ tin cậy của 10 nguồn tài liệu theo 5 tiêu chí chuẩn hóa.
+- **Chủ đề nghiên cứu:** Ứng dụng AI trong kinh doanh giai đoạn 2020-2026.
+- **Công cụ sử dụng:** Google Scholar, ScienceDirect, ResearchGate.
+- **Tài liệu:** [bai-2-thong-tin-hoc-thuat.docx](file:///d:/fpt_Oanh/public/documents/bai-2-thong-tin-hoc-thuat.docx) & [bai-2-thong-tin-hoc-thuat.pdf](file:///d:/fpt_Oanh/public/documents/bai-2-thong-tin-hoc-thuat.pdf).
+
+### 💬 Bài tập 3: Viết Prompt hiệu quả cho các tác vụ học tập (Prompt hiệu quả)
+- **Mục tiêu:** Thực hành viết và tinh chỉnh prompt qua 3 cấp độ (từ cơ bản đến nâng cấp có bối cảnh, vai trò, tiêu chí cụ thể) dựa trên mô hình CLEAR (Context, Role, Explicit Instruction, Audience, Refine).
+- **Tác vụ thử nghiệm:** Phân tích văn bản pháp luật, giải thích khái niệm tài sản và tạo bộ câu hỏi bảo vệ môi trường.
+- **Công cụ sử dụng:** Các mô hình ngôn ngữ lớn, mô hình CLEAR.
+- **Tài liệu:** [bai-3-viet-prompt.docx](file:///d:/fpt_Oanh/public/documents/bai-3-viet-prompt.docx) & [bai-3-viet-prompt.pdf](file:///d:/fpt_Oanh/public/documents/bai-3-viet-prompt.pdf).
+
+### 🤝 Bài tập 4: Sử dụng công cụ hợp tác trực tuyến cho dự án nhóm (Cộng tác trực tuyến)
+- **Mục tiêu:** Thiết kế kế hoạch và quy trình cộng tác trực tuyến trong 7 ngày để hoàn thiện bài thuyết trình và báo cáo nhóm về chuyển đổi số giáo dục.
+- **Công cụ sử dụng:** Zoom, Google Drive/Docs, Trello, Slack.
+- **Tài liệu:** [bai-4-hop-tac-truc-tuyen.docx](file:///d:/fpt_Oanh/public/documents/bai-4-hop-tac-truc-tuyen.docx) & [bai-4-hop-tac-truc-tuyen.pdf](file:///d:/fpt_Oanh/public/documents/bai-4-hop-tac-truc-tuyen.pdf).
+
+### 🎨 Bài tập 5: Sử dụng AI tạo sinh để hỗ trợ sáng tạo nội dung (Sáng tạo với AI)
+- **Mục tiêu:** Kết hợp quy trình đa công cụ AI (ChatGPT để lên ý tưởng/dàn ý, Creative Agent để tạo ảnh minh họa, Canva AI để thiết kế slide thuyết trình) dưới sự kiểm soát và biên tập của con người.
+- **Sản phẩm đầu ra:** Bài thuyết trình 10 slide về Cyber Security.
+- **Tài liệu:** [bai-5-sang-tao-voi-ai.docx](file:///d:/fpt_Oanh/public/documents/bai-5-sang-tao-voi-ai.docx) & [bai-5-sang-tao-voi-ai.pdf](file:///d:/fpt_Oanh/public/documents/bai-5-sang-tao-voi-ai.pdf).
+
+### 🛡️ Bài tập 6: Sử dụng AI có trách nhiệm trong học tập và nghiên cứu (AI có trách nhiệm)
+- **Mục tiêu:** Phân tích ranh giới giữa hỗ trợ hợp lý và gian lận học thuật, thực hành kiểm chứng và biên tập bài luận có sự tham gia của AI (Grok), đồng thời xây dựng bộ 6 nguyên tắc đạo đức sử dụng AI cho bản thân.
+- **Tài liệu:** [bai-6-ai-co-trach-nhiem.docx](file:///d:/fpt_Oanh/public/documents/bai-6-ai-co-trach-nhiem.docx) & [bai-6-ai-co-trach-nhiem.pdf](file:///d:/fpt_Oanh/public/documents/bai-6-ai-co-trach-nhiem.pdf).
+
+---
+
+## 3. Công Nghệ Phát Triển Website
+Trang web portfolio được xây dựng bằng công nghệ hiện đại nhằm đảm bảo hiệu năng và trải nghiệm người dùng cao nhất:
+- **Framework:** Next.js (App Router) bản mới nhất.
+- **Ngôn ngữ & Styling:** React, TypeScript, Tailwind CSS, CSS variables.
+- **Hiệu ứng chuyển động:** Motion for React (cho các chuyển động mượt mà và chuyển đổi trang tinh tế).
+- **Tải tài liệu:** Lưu trữ trực tiếp trong thư mục `public/documents/` (độc lập, không phụ thuộc vào liên kết Drive ngoài, giúp người xem truy cập trực tiếp).
+
+---
+
+## 4. Hướng Dẫn Cài Đặt và Chạy Dự Án Cục Bộ
+
+### Yêu cầu hệ thống:
 - Node.js 20.9 trở lên
 - npm 10 trở lên
 
-## Chạy trên máy
+### Các bước thực hiện:
+1. Cài đặt các thư viện phụ thuộc:
+   ```bash
+   npm ci
+   ```
+2. Tạo file cấu hình môi trường từ mẫu:
+   ```bash
+   copy .env.example .env.local
+   ```
+3. Chạy máy chủ phát triển (Dev server):
+   ```bash
+   npm run dev
+   ```
+4. Truy cập trang web qua trình duyệt tại địa chỉ: [http://localhost:3000](http://localhost:3000)
 
-```bash
-npm ci
-copy .env.example .env.local
-npm run dev
-```
+### Kiểm tra chất lượng và build production:
+- Chạy lệnh kiểm tra lỗi tự động (ESLint, TypeScript strict mode, build thử):
+  ```bash
+  npm run verify
+  ```
+- Khởi chạy phiên bản Production đã build:
+  ```bash
+  npm run start
+  ```
 
-Mở `http://localhost:3000`.
+---
 
-## Kiểm tra trước khi triển khai
+## 5. Hướng Dẫn Cập Nhật Nội Dung
+Để thay đổi thông tin hiển thị trên Portfolio:
+- **Thông tin cá nhân, tên môn học và dữ liệu 6 bài tập:** Cập nhật tại file [portfolio.ts](file:///d:/fpt_Oanh/src/data/portfolio.ts).
+- **Hệ thống tệp tài liệu đi kèm:** Các tệp Word (.docx) và PDF (.pdf) được đặt trực tiếp trong thư mục [public/documents](file:///d:/fpt_Oanh/public/documents) với tên tệp chuẩn hóa tương ứng từng bài tập.
 
-```bash
-npm run verify
-```
-
-Lệnh này chạy ESLint, TypeScript strict mode và production build. Có thể thử bản production trên máy bằng:
-
-```bash
-npm run start
-```
-
-## Nơi chỉnh nội dung thật
-
-- Thông tin cá nhân, tên môn học và toàn bộ 6 bài tập: `src/data/portfolio.ts`
-- Ánh xạ hành tinh và mô tả chủ đề: `src/data/planets.ts`
-- Ảnh hành tinh: `public/planets/`
-- Ảnh bìa bài tập: `public/artwork/`
-- File Word và PDF của 6 bài nộp: `public/documents/`
-- Design tokens và giao diện: `app/globals.css`
-
-Mỗi bài tập có hai bản tài liệu cùng tên cơ sở: `.docx` để tải xuống và `.pdf` để hiển thị trực tiếp trong trang chi tiết. Khi thay một file Word, hãy xuất lại PDF tương ứng, giữ nguyên tên file trong `public/documents/`, rồi cập nhật số trang tại `src/data/portfolio.ts`.
-
-Ví dụ Bài 1:
-
-```text
-public/documents/bai-1-quan-ly-tep.docx
-public/documents/bai-1-quan-ly-tep.pdf
-```
-
-Website không phụ thuộc Google Drive hay liên kết bài tập bên ngoài, vì vậy toàn bộ bài nộp vẫn xem được sau khi triển khai lên Vercel.
-
-## Đưa website lên mạng bằng Vercel
-
-Phương án khuyến nghị là GitHub + Vercel vì mỗi lần đẩy code lên nhánh `main`, Vercel tự build lại; các nhánh khác có đường dẫn Preview riêng.
-
-### 1. Đưa dự án lên GitHub
-
-Tạo một repository trống trên GitHub, sau đó chạy trong thư mục dự án:
-
-```bash
-git init
-git add .
-git commit -m "Prepare digital portfolio"
-git branch -M main
-git remote add origin https://github.com/TEN_TAI_KHOAN/TEN_REPOSITORY.git
-git push -u origin main
-```
-
-### 2. Kết nối Vercel
-
-1. Đăng nhập `vercel.com` bằng GitHub.
-2. Chọn **Add New > Project**, rồi import repository vừa tạo.
-3. Giữ Framework Preset là **Next.js** và bấm **Deploy**.
-4. Sau lần deploy đầu, sao chép domain production dạng `https://ten-du-an.vercel.app`.
-5. Trong **Project Settings > Environment Variables**, thêm:
-
-```env
-NEXT_PUBLIC_SITE_URL=https://ten-du-an.vercel.app
-```
-
-6. Redeploy bản production để canonical URL, Open Graph, sitemap và robots dùng đúng domain.
-
-Đường dẫn `https://ten-du-an.vercel.app` lúc này là link công khai có thể gửi cho mọi người. Nếu có tên miền riêng, thêm tại **Project Settings > Domains**, cập nhật `NEXT_PUBLIC_SITE_URL` rồi redeploy.
-
-### Triển khai nhanh bằng CLI
-
-```bash
-npx vercel
-npx vercel --prod
-```
-
-Vẫn cần đặt `NEXT_PUBLIC_SITE_URL` trong Vercel và deploy lại sau khi có domain production.
-
-## Sau mỗi lần sửa nội dung
-
-```bash
-npm run verify
-git add .
-git commit -m "Update portfolio content"
-git push
-```
-
-Vercel sẽ tự tạo bản triển khai mới từ commit vừa đẩy.
+---
+*Bản quyền Digital Portfolio thuộc về Trịnh Thị Kiều Oanh - 2026.*
