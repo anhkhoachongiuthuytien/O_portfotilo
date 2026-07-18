@@ -102,6 +102,7 @@ type Planet = {
   phase: number;
   texture: string;
   textureScale?: number;
+  textureCrop?: { sx: number; sy: number; sw: number; sh: number };
   axialTilt?: number;
   ring?: boolean;
 };
@@ -112,7 +113,7 @@ const PLANETS: Planet[] = [
   { orbit: .3, speed: .00025, radius: .027, inner: "#8ee5ff", outer: "#1f5c93", phase: 4.1, texture: "/planets/earth.webp" },
   { orbit: .39, speed: .0002, radius: .021, inner: "#ffab76", outer: "#963f35", phase: 5.8, texture: "/planets/mars.webp" },
   { orbit: .51, speed: .00013, radius: .052, inner: "#f4d19c", outer: "#9d5938", phase: 1.4, texture: "/planets/jupiter.webp" },
-  { orbit: .64, speed: .0001, radius: .044, inner: "#fff0bb", outer: "#b98b49", phase: 3.2, texture: "/planets/saturn.webp", textureScale: 4.15, axialTilt: -.08, ring: true },
+  { orbit: .64, speed: .0001, radius: .044, inner: "#fff0bb", outer: "#b98b49", phase: 3.2, texture: "/planets/saturn.webp", textureScale: 2.06, textureCrop: { sx: 151, sy: 143, sw: 338, sh: 338 }, axialTilt: -.08, ring: true },
   { orbit: .77, speed: .000075, radius: .032, inner: "#b6f2ff", outer: "#3d8ea5", phase: 5.1, texture: "/planets/uranus.webp", textureScale: 2.8, axialTilt: -.08, ring: true },
   { orbit: .89, speed: .000058, radius: .032, inner: "#90c8ff", outer: "#2d4f9f", phase: .4, texture: "/planets/neptune.webp" },
 ];
@@ -255,7 +256,12 @@ export function SolarSystemBackground() {
         context.shadowColor = planet.outer;
         context.globalCompositeOperation = "source-over";
         context.globalAlpha = 1;
-        context.drawImage(texture, -size / 2, -size / 2, size, size);
+        if (planet.textureCrop) {
+          const { sx, sy, sw, sh } = planet.textureCrop;
+          context.drawImage(texture, sx, sy, sw, sh, -size / 2, -size / 2, size, size);
+        } else {
+          context.drawImage(texture, -size / 2, -size / 2, size, size);
+        }
         context.restore();
       } else {
         context.shadowBlur = radius * .8;
@@ -374,13 +380,16 @@ export function SolarSystemBackground() {
         earth: 4.8,
         mars: 6.1,
         jupiter: 3.2,
-        saturn: 4.2,
+        saturn: 3.45,
         uranus: 4.8,
         neptune: 4.8,
       })[theme];
-      const themeFocusLevel = (theme: SceneTheme, progress: number) => theme === "solar"
-        ? progress
-        : Math.min(1, .72 + progress * .28);
+      const themeInitialLevel = (theme: SceneTheme) => theme === "saturn" ? .5 : .72;
+      const themeFocusLevel = (theme: SceneTheme, progress: number) => {
+        if (theme === "solar") return progress;
+        const initial = themeInitialLevel(theme);
+        return Math.min(1, initial + progress * (1 - initial));
+      };
       const themeAnchor = (theme: SceneTheme, level: number) => {
         if (theme === "solar") {
           return {
@@ -388,7 +397,8 @@ export function SolarSystemBackground() {
             y: centerY + (height / 2 - centerY) * level,
           };
         }
-        const landing = Math.min(1, Math.max(0, (level - .72) / .28));
+        const initial = themeInitialLevel(theme);
+        const landing = Math.min(1, Math.max(0, (level - initial) / (1 - initial)));
         const topRightX = width * (mobile ? .72 : .79);
         const topRightY = height * (mobile ? .24 : .27);
         return {
@@ -417,7 +427,7 @@ export function SolarSystemBackground() {
         const toTheme = routeTransition.theme;
         const fromScrollFocus = fromTheme === "solar" ? scrollFocus : themedScrollFocus;
         fromLevel = themeFocusLevel(fromTheme, fromScrollFocus);
-        toLevel = toTheme === "solar" ? 0 : .72;
+        toLevel = toTheme === "solar" ? 0 : themeInitialLevel(toTheme);
         const from = focusPoint(fromTheme);
         const to = focusPoint(toTheme);
         const fromTarget = fromTheme === "solar" ? { x: centerX, y: centerY } : from;

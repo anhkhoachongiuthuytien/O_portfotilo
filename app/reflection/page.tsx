@@ -1,4 +1,5 @@
 import { PlanetLegend } from "@/src/components/PlanetLegend";
+import { ReflectionEffects } from "@/src/components/ReflectionEffects";
 import { MagneticLink } from "@/src/components/SectionSignatures";
 import { Reveal } from "@/src/components/VisualEffects";
 
@@ -52,6 +53,7 @@ const nextSteps = [
 export default function Reflection() {
   return (
     <section className="thematic-section theme-saturn reflection-page section pt-0">
+      <ReflectionEffects />
       <div className="planet-focus-hero reflection-hero">
         <div className="container planet-focus-grid">
           <div className="planet-focus-copy reflection-hero-copy">
@@ -69,7 +71,7 @@ export default function Reflection() {
       </div>
 
       <div className="container reflection-deck">
-        <section className="reflection-opening" aria-labelledby="reflection-opening-title">
+        <section className="reflection-opening" aria-labelledby="reflection-opening-title" data-reflection-reveal>
           <Reveal className="reflection-opening-main">
             <p className="reflection-kicker">Nhìn lại toàn bộ portfolio</p>
             <h2 id="reflection-opening-title">Khi ghép lại sáu bài, mình nhìn rõ hơn cách mình đã học.</h2>
@@ -81,7 +83,7 @@ export default function Reflection() {
           </Reveal>
         </section>
 
-        <section className="reflection-story-grid" aria-label="Quá trình và kỹ năng tích lũy">
+        <section className="reflection-story-grid" aria-label="Quá trình và kỹ năng tích lũy" data-reflection-reveal>
           <Reveal className="reflection-process-panel">
             <p className="reflection-kicker">Quá trình xây dựng sản phẩm</p>
             <h2>Từ sáu bài nộp rời rạc đến một hồ sơ có mạch đọc.</h2>
@@ -108,7 +110,7 @@ export default function Reflection() {
         </section>
 
         <Reveal>
-          <section className="reflection-challenges" aria-labelledby="reflection-challenges-title">
+          <section className="reflection-challenges" aria-labelledby="reflection-challenges-title" data-reflection-reveal>
             <div className="reflection-section-heading">
               <p className="reflection-kicker">Khó khăn và cách xử lý</p>
               <h2 id="reflection-challenges-title">Không phải lúc nào cũng trôi chảy, nhưng mình học được cách gỡ từng phần.</h2>
@@ -127,7 +129,7 @@ export default function Reflection() {
           </section>
         </Reveal>
 
-        <section className="reflection-growth" aria-labelledby="reflection-growth-title">
+        <section className="reflection-growth" aria-labelledby="reflection-growth-title" data-reflection-reveal>
           <Reveal className="reflection-growth-heading">
             <p className="reflection-kicker">Dấu hiệu tiến bộ</p>
             <h2 id="reflection-growth-title">Sự thay đổi nằm trong cách mình làm việc.</h2>
@@ -145,7 +147,7 @@ export default function Reflection() {
           </Reveal>
         </section>
 
-        <section className="reflection-forward" aria-label="Định hướng tiếp theo và bài học lớn nhất">
+        <section className="reflection-forward" aria-label="Định hướng tiếp theo và bài học lớn nhất" data-reflection-reveal>
           <Reveal className="reflection-forward-main">
             <p className="reflection-kicker">Định hướng tiếp theo</p>
             <h2>Tiếp tục rèn những thói quen có thể đi cùng mình lâu dài.</h2>
@@ -162,7 +164,7 @@ export default function Reflection() {
         </section>
 
         <Reveal>
-          <section className="reflection-finale" aria-labelledby="reflection-finale-title">
+          <section className="reflection-finale" aria-labelledby="reflection-finale-title" data-reflection-reveal>
             <div className="reflection-finale-orbit" aria-hidden="true"><i /><i /><i /></div>
             <div>
               <p className="reflection-kicker">Dấu mốc cuối</p>
