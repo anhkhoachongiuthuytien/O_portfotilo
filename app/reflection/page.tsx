@@ -1,144 +1,178 @@
-import Link from "next/link";
-import { ArrowRight, Check, Compass, Layers3, Search, ShieldCheck } from "lucide-react";
-import { Reveal } from "@/src/components/VisualEffects";
 import { PlanetLegend } from "@/src/components/PlanetLegend";
-import { SaturnMilestone } from "@/src/components/SectionSignatures";
+import { MagneticLink } from "@/src/components/SectionSignatures";
+import { Reveal } from "@/src/components/VisualEffects";
 
-const journey = [
-  {
-    title: "Tạo nền tảng có trật tự",
-    detail: "Bài 1 và 2 giúp mình nhận ra kỹ năng số bắt đầu từ những việc rất cụ thể: biết dữ liệu nằm ở đâu, đặt tên thế nào và dựa vào tiêu chí nào để tin một nguồn.",
-    icon: Layers3,
-  },
-  {
-    title: "Biến công cụ thành quy trình",
-    detail: "Từ Bài 3 đến Bài 5, mình học cách viết yêu cầu rõ hơn, phân công công việc minh bạch và kết hợp nhiều công cụ mà vẫn giữ quyền lựa chọn cuối cùng.",
-    icon: Search,
-  },
-  {
-    title: "Đặt trách nhiệm ở trung tâm",
-    detail: "Bài 6 khiến mình nhìn lại ranh giới giữa hỗ trợ và phụ thuộc. Minh bạch, kiểm chứng và đóng góp cá nhân trở thành ba câu hỏi phải trả lời trước khi nộp bài.",
-    icon: ShieldCheck,
-  },
+const learningChain = [
+  { title: "Quản lý tệp", detail: "Tạo cấu trúc lưu trữ dễ tìm lại và xử lý dữ liệu cẩn thận hơn." },
+  { title: "Chọn nguồn tin", detail: "Tìm kiếm có chiến lược, đánh giá xuất xứ và kiểm tra độ tin cậy." },
+  { title: "Viết prompt", detail: "Nêu rõ vai trò, bối cảnh, mục tiêu và tiêu chí của câu trả lời." },
+  { title: "Cộng tác số", detail: "Phân vai, dùng tài liệu chung và theo dõi cùng một tiến độ." },
+  { title: "Biên tập nội dung", detail: "Kết hợp gợi ý của AI với lựa chọn và giọng điệu của bản thân." },
+  { title: "Dùng AI có trách nhiệm", detail: "Minh bạch, kiểm chứng và giữ đóng góp cá nhân trong bài làm." },
+];
+
+const reviewSteps = [
+  "Rà soát lại sáu bài nộp",
+  "Chọn nội dung cần làm nổi bật",
+  "Sắp xếp minh chứng theo mạch đọc",
+  "Kiểm tra giao diện và tài liệu gốc",
 ];
 
 const challenges = [
   {
-    title: "Quá nhiều kết quả nhưng chưa chắc đáng tin",
-    solution: "Mình thu hẹp phạm vi, thiết kế từ khóa song ngữ và đánh giá nguồn theo tác giả, đơn vị xuất bản, phương pháp, trích dẫn và tính cập nhật.",
+    challenge: "Bài gốc có nhiều ảnh và chi tiết, nếu đưa hết vào một chỗ thì trang rất dài và khó theo dõi.",
+    action: "Mình tóm tắt mỗi bài theo cùng một mạch: mục tiêu, bối cảnh, quá trình, kết quả và bài học; tài liệu đầy đủ được hiển thị riêng ở cuối hồ sơ.",
+    result: "Người xem nắm được ý chính trước, nhưng vẫn có thể đọc và kiểm tra toàn bộ bài nộp.",
   },
   {
-    title: "Công việc nhóm dễ rời rạc khi mỗi người dùng một kênh",
-    solution: "Nhóm thống nhất vai trò, một nơi lưu tài liệu, lịch bảy ngày và nhịp cập nhật ngắn để mọi người nhìn thấy cùng một tiến độ.",
+    challenge: "Tên bài, thứ tự, cách viết và định dạng giữa sáu tài liệu ban đầu chưa thật sự đồng nhất.",
+    action: "Mình đối chiếu lại barem, sửa lỗi đánh máy, thống nhất tiêu đề và sắp xếp các phần theo một cấu trúc chung.",
+    result: "Portfolio trở thành một sản phẩm liền mạch thay vì sáu tệp riêng lẻ đặt cạnh nhau.",
   },
   {
-    title: "Đầu ra AI nhanh nhưng đôi khi chung chung",
-    solution: "Mình so sánh nhiều phiên bản prompt, thêm bối cảnh và tiêu chí, sau đó kiểm tra, viết lại bằng giọng của mình và khai báo phần AI hỗ trợ.",
+    challenge: "Hiệu ứng thị giác dễ làm phần nội dung học thuật bị chìm hoặc khiến website trở nên nặng nề.",
+    action: "Mình giữ mỗi trang một hành tinh chủ đề, giảm chuyển động ở phần đọc dài và ưu tiên tương phản, khoảng trắng cùng khả năng truy cập.",
+    result: "Chủ đề hệ mặt trời vẫn có bản sắc nhưng không cản trở việc đọc và đối chiếu bài làm.",
   },
+];
+
+const growth = [
+  { label: "Lưu trữ", before: "Lưu theo thói quen", after: "Có cấu trúc và quy tắc đặt tên" },
+  { label: "Nguồn tin", before: "Ưu tiên kết quả đầu tiên", after: "Đánh giá bằng tiêu chí rõ ràng" },
+  { label: "Prompt", before: "Đặt câu hỏi ngắn và chung", after: "Có vai trò, bối cảnh và đầu ra" },
+  { label: "AI", before: "Chủ yếu chú ý kết quả", after: "Kiểm chứng cả quá trình sử dụng" },
+];
+
+const nextSteps = [
+  "Duy trì cách lưu trữ tài liệu có hệ thống và ghi lại quá trình làm bài.",
+  "Rèn kỹ năng tìm, đọc và đối chiếu nguồn cho các môn ngoại ngữ và văn hóa.",
+  "Dùng AI như công cụ hỗ trợ, luôn kiểm tra lại và tự chịu trách nhiệm với sản phẩm cuối.",
 ];
 
 export default function Reflection() {
   return (
     <section className="thematic-section theme-saturn reflection-page section pt-0">
-      <div className="planet-focus-hero">
+      <div className="planet-focus-hero reflection-hero">
         <div className="container planet-focus-grid">
-          <Reveal className="planet-focus-copy">
+          <div className="planet-focus-copy reflection-hero-copy">
             <p className="eyebrow">Tổng kết hành trình</p>
-            <h1 className="mt-5 text-5xl font-semibold tracking-[-.08em] md:text-7xl">Điều còn lại sau <span className="text-[var(--accent)]">sáu bài tập.</span></h1>
-            <p className="muted mt-7 max-w-md text-base leading-7 md:text-lg md:leading-8">Một bản tự đánh giá về kiến thức, thói quen và trách nhiệm của mình khi học tập trong môi trường số.</p>
-            <div className="reflection-hero-stats" aria-label="Tổng quan quá trình học">
-              <div><strong>06</strong><span>bài đã hoàn thành</span></div>
+            <h1 className="reflection-title">Khép lại một chặng học <span>kỹ năng số.</span></h1>
+            <p className="reflection-hero-lead">Trang này là khoảng lặng để mình nhìn lại điều đã làm được, những lúc còn lúng túng và cách sáu bài thực hành đã kết nối thành một phương pháp học rõ ràng hơn.</p>
+            <div className="reflection-hero-stats" aria-label="Tổng quan hồ sơ">
+              <div><strong>06</strong><span>bài thực hành</span></div>
               <div><strong>41</strong><span>trang minh chứng</span></div>
-              <div><strong>01</strong><span>quy trình cá nhân</span></div>
+              <div><strong>01</strong><span>hành trình học</span></div>
             </div>
-          </Reveal>
-          <Reveal className="planet-focus-legend" delay={.14}><PlanetLegend /></Reveal>
+          </div>
+          <div className="planet-focus-legend"><PlanetLegend /></div>
         </div>
       </div>
 
-      <div className="container planet-content-deck">
-        <div className="reflection-summary-grid mt-20 grid gap-16">
-          <Reveal>
-            <div className="reflection-summary-sticky">
-              <p className="text-xs font-bold uppercase tracking-[.18em] text-[var(--accent)]">Bài học lớn nhất</p>
-              <p className="mt-5 text-3xl font-semibold leading-tight tracking-[-.05em] md:text-5xl">Công cụ chỉ có giá trị khi mình hiểu mục tiêu, kiểm tra đầu ra và chịu trách nhiệm với lựa chọn cuối cùng.</p>
-            </div>
+      <div className="container reflection-deck">
+        <section className="reflection-opening" aria-labelledby="reflection-opening-title">
+          <Reveal className="reflection-opening-main">
+            <p className="reflection-kicker">Nhìn lại toàn bộ portfolio</p>
+            <h2 id="reflection-opening-title">Khi ghép lại sáu bài, mình nhìn rõ hơn cách mình đã học.</h2>
+            <p>Lúc từng bài còn nằm riêng trong các tệp Word, mình thường xem đó là những nhiệm vụ cần hoàn thành. Khi đưa chúng vào cùng một portfolio, mình mới nhận ra chúng tạo thành một chuỗi liên kết: tổ chức dữ liệu để làm việc rõ ràng, tìm nguồn để có căn cứ, viết prompt để giao tiếp chính xác, cộng tác để hoàn thành mục tiêu chung và sử dụng AI với sự kiểm soát của bản thân.</p>
           </Reveal>
-          <div className="space-y-7 text-lg leading-8 text-[var(--muted-strong)]">
-            <Reveal delay={.08}><p>Trước môn học, mình thường nghĩ kỹ năng số chủ yếu là biết sử dụng một phần mềm. Sau sáu bài tập, mình hiểu nó là cả một chuỗi năng lực liên kết: tổ chức dữ liệu, tìm đúng nguồn, đặt câu hỏi rõ, phối hợp với người khác, biên tập sản phẩm và bảo vệ tính trung thực của bài làm.</p></Reveal>
-            <Reveal delay={.14}><p>Điều mình tâm đắc nhất là tốc độ không còn là tiêu chí duy nhất. AI có thể tạo bản nháp nhanh, nhưng một sản phẩm đáng tin vẫn cần góc nhìn cá nhân, nguồn có thể kiểm tra và những quyết định mà mình giải thích được.</p></Reveal>
-            <Reveal delay={.2}><p>Portfolio cũng giúp mình nhìn thấy quá trình thay vì chỉ nhìn kết quả. Khi đặt các bài cạnh nhau, mình nhận ra mỗi kỹ năng nhỏ đều chuẩn bị cho bước tiếp theo: tệp được tổ chức tốt giúp cộng tác tốt hơn; nguồn được kiểm chứng giúp prompt và nội dung chính xác hơn; còn minh bạch giúp việc dùng AI trở nên có trách nhiệm.</p></Reveal>
-          </div>
-        </div>
+          <Reveal className="reflection-opening-note" delay={0.1}>
+            <span>6 bài · 1 hành trình</span>
+            <p>Điều có giá trị nhất không chỉ là sáu sản phẩm cuối, mà là cách mỗi bài thay đổi một thói quen học tập nhỏ của mình.</p>
+          </Reveal>
+        </section>
 
-        <div className="reflection-journey mt-24">
-          {journey.map(({ title, detail, icon: Icon }, index) => (
-            <Reveal key={title} delay={index * .08}>
-              <article className="card-shell saturn-journey-card h-full">
-                <div className="card-core h-full p-6 md:p-7">
-                  <SaturnMilestone index={index + 1} />
-                  <Icon size={18} className="mt-6 text-[var(--accent)]" strokeWidth={1.5} />
-                  <h2 className="mt-5 text-xl font-semibold">{title}</h2>
-                  <p className="muted mt-3 text-sm leading-7">{detail}</p>
-                </div>
-              </article>
-            </Reveal>
-          ))}
-        </div>
+        <section className="reflection-story-grid" aria-label="Quá trình và kỹ năng tích lũy">
+          <Reveal className="reflection-process-panel">
+            <p className="reflection-kicker">Quá trình xây dựng sản phẩm</p>
+            <h2>Từ sáu bài nộp rời rạc đến một hồ sơ có mạch đọc.</h2>
+            <p>Mình bắt đầu bằng việc đọc lại toàn bộ bài, kiểm tra tên, nội dung, ảnh minh chứng và thứ tự trình bày. Phần mất nhiều thời gian nhất là chọn cách giữ đủ chiều sâu nhưng không khiến website rối hoặc quá nặng. Quá trình này giúp mình nhìn bài làm như một sản phẩm hoàn chỉnh, chứ không chỉ là một tệp đã nộp.</p>
+            <ol className="reflection-review-flow">
+              {reviewSteps.map((step, index) => <li key={step}><span>{String(index + 1).padStart(2, "0")}</span><p>{step}</p></li>)}
+            </ol>
+          </Reveal>
 
-        <Reveal className="mt-24">
-          <section className="reflection-challenge-panel card-shell" aria-labelledby="challenge-heading">
-            <div className="card-core p-7 md:p-10">
-              <div className="reflection-challenge-heading">
-                <div>
-                  <p className="eyebrow">Khó khăn và cách giải quyết</p>
-                  <h2 id="challenge-heading" className="mt-5 max-w-2xl text-3xl font-semibold tracking-[-.05em] md:text-5xl">Không né tránh điểm khó, mà biến chúng thành một quy trình rõ hơn.</h2>
-                </div>
-                <Compass size={34} strokeWidth={1.25} className="text-[var(--accent)]" aria-hidden="true" />
-              </div>
-              <div className="reflection-challenge-list">
-                {challenges.map((item, index) => (
-                  <article className="reflection-challenge-row" key={item.title}>
-                    <span>0{index + 1}</span>
-                    <div><h3>{item.title}</h3><p>{item.solution}</p></div>
-                  </article>
-                ))}
-              </div>
+          <Reveal className="reflection-skills-panel" delay={0.1}>
+            <header>
+              <p className="reflection-kicker">Kỹ năng tích lũy</p>
+              <h2>Mỗi bài thêm một mắt xích.</h2>
+            </header>
+            <ol className="reflection-skill-orbit">
+              {learningChain.map((skill, index) => (
+                <li key={skill.title}>
+                  <span>{String(index + 1).padStart(2, "0")}</span>
+                  <div><h3>{skill.title}</h3><p>{skill.detail}</p></div>
+                </li>
+              ))}
+            </ol>
+          </Reveal>
+        </section>
+
+        <Reveal>
+          <section className="reflection-challenges" aria-labelledby="reflection-challenges-title">
+            <div className="reflection-section-heading">
+              <p className="reflection-kicker">Khó khăn và cách xử lý</p>
+              <h2 id="reflection-challenges-title">Không phải lúc nào cũng trôi chảy, nhưng mình học được cách gỡ từng phần.</h2>
+            </div>
+            <div className="reflection-challenge-table">
+              <div className="reflection-challenge-labels" aria-hidden="true"><span>Thách thức</span><span>Cách mình xử lý</span><span>Điều thay đổi</span></div>
+              {challenges.map((item, index) => (
+                <article className="reflection-challenge-entry" key={item.challenge}>
+                  <span className="reflection-challenge-index">{String(index + 1).padStart(2, "0")}</span>
+                  <p>{item.challenge}</p>
+                  <p>{item.action}</p>
+                  <p>{item.result}</p>
+                </article>
+              ))}
             </div>
           </section>
         </Reveal>
 
-        <div className="reflection-direction-grid mt-24 grid gap-8">
-          <Reveal>
-            <section className="card-shell h-full">
-              <div className="card-core h-full p-7 md:p-9">
-                <p className="eyebrow">Trước và sau môn học</p>
-                <div className="mt-8 space-y-5">
-                  <SkillRow label="Dữ liệu" before="Lưu theo thói quen" after="Có cấu trúc và quy tắc" />
-                  <SkillRow label="Nguồn tin" before="Ưu tiên kết quả đầu" after="Đánh giá bằng tiêu chí" />
-                  <SkillRow label="Prompt" before="Hỏi một câu ngắn" after="Có vai trò và bối cảnh" />
-                  <SkillRow label="AI" before="Chú ý đầu ra" after="Kiểm chứng cả quá trình" />
-                </div>
-              </div>
-            </section>
+        <section className="reflection-growth" aria-labelledby="reflection-growth-title">
+          <Reveal className="reflection-growth-heading">
+            <p className="reflection-kicker">Dấu hiệu tiến bộ</p>
+            <h2 id="reflection-growth-title">Sự thay đổi nằm trong cách mình làm việc.</h2>
+            <p>Mình chưa xem đây là những kỹ năng đã hoàn thiện. Tuy vậy, việc đối chiếu trước và sau môn học cho thấy mình đã biết đặt thêm câu hỏi trước khi dùng công cụ hoặc nộp một sản phẩm.</p>
           </Reveal>
-          <Reveal delay={.1}>
-            <section className="card-shell h-full">
-              <div className="card-core h-full p-7 md:p-9">
-                <p className="eyebrow">Hướng ứng dụng tiếp theo</p>
-                <h2 className="mt-6 text-3xl font-semibold tracking-[-.05em]">Đưa kỹ năng số vào việc học ngoại ngữ một cách có chọn lọc.</h2>
-                <p className="muted mt-5 leading-7">Trong thời gian tới, mình muốn áp dụng quy trình tìm và đánh giá nguồn cho các bài nghiên cứu về ngôn ngữ, dùng AI để luyện diễn đạt hoặc tạo phương án học tập, đồng thời vẫn tự kiểm tra sắc thái, ngữ cảnh văn hóa và độ chính xác trước khi sử dụng.</p>
-                <p className="muted mt-4 leading-7">Với dự án nhóm, mình sẽ tiếp tục dùng không gian tài liệu chung, phân vai rõ và ghi lại phiên bản. Với AI, mình giữ sáu nguyên tắc cá nhân như một bộ kiểm tra trước khi nộp bất kỳ sản phẩm học thuật nào.</p>
-                <Link href="/projects" className="btn btn-primary mt-8">Xem lại toàn bộ dự án <span className="btn-icon"><ArrowRight size={15} strokeWidth={1.5} /></span></Link>
-              </div>
-            </section>
+          <Reveal className="reflection-growth-list" delay={0.1}>
+            <div className="reflection-growth-labels" aria-hidden="true"><span>Trước môn học</span><span>Sau môn học</span></div>
+            {growth.map((item) => (
+              <article key={item.label}>
+                <h3>{item.label}</h3>
+                <p>{item.before}</p>
+                <p>{item.after}</p>
+              </article>
+            ))}
           </Reveal>
-        </div>
+        </section>
+
+        <section className="reflection-forward" aria-label="Định hướng tiếp theo và bài học lớn nhất">
+          <Reveal className="reflection-forward-main">
+            <p className="reflection-kicker">Định hướng tiếp theo</p>
+            <h2>Tiếp tục rèn những thói quen có thể đi cùng mình lâu dài.</h2>
+            <p>Sau portfolio này, mình muốn đưa quy trình tìm và đánh giá nguồn vào các bài nghiên cứu về ngôn ngữ và văn hóa Nga, tổ chức tài liệu học ngoại ngữ dễ tra cứu hơn, đồng thời sử dụng AI minh bạch và có giới hạn rõ ràng.</p>
+            <ol>
+              {nextSteps.map((step) => <li key={step}>{step}</li>)}
+            </ol>
+          </Reveal>
+          <Reveal className="reflection-lesson" delay={0.1}>
+            <p className="reflection-kicker">Điều mình rút ra</p>
+            <blockquote>“Một sản phẩm học tập tốt không chỉ đủ yêu cầu. Nó còn cho thấy mình hiểu, sắp xếp và chịu trách nhiệm với điều đã trình bày.”</blockquote>
+            <p>Đây là điều mình cảm nhận rõ nhất sau khi hoàn thiện website này.</p>
+          </Reveal>
+        </section>
+
+        <Reveal>
+          <section className="reflection-finale" aria-labelledby="reflection-finale-title">
+            <div className="reflection-finale-orbit" aria-hidden="true"><i /><i /><i /></div>
+            <div>
+              <p className="reflection-kicker">Dấu mốc cuối</p>
+              <h2 id="reflection-finale-title">Một nơi lưu lại bài làm, một dấu mốc để nhìn lại cách mình tiến bộ.</h2>
+              <p>Portfolio này chỉ là một chặng nhỏ, nhưng nó giúp mình hiểu kỹ năng số không phải những thao tác tách rời. Đó là tập hợp của nhiều thói quen làm việc cẩn thận, biết chọn lọc, biết tự đánh giá và biết chịu trách nhiệm với sản phẩm cuối cùng.</p>
+            </div>
+            <MagneticLink href="/projects" className="btn-primary">Xem lại sáu hồ sơ bài tập</MagneticLink>
+          </section>
+        </Reveal>
       </div>
     </section>
   );
-}
-
-function SkillRow({ label, before, after }: { label: string; before: string; after: string }) {
-  return <div className="grid grid-cols-[72px_1fr] gap-4 border-b border-white/10 pb-5 last:border-b-0 last:pb-0"><span className="text-sm font-semibold text-[var(--accent)]">{label}</span><div className="grid gap-2 text-sm sm:grid-cols-2"><span className="muted">{before}</span><span className="inline-flex items-center gap-2 text-[var(--muted-strong)]"><Check size={14} className="text-[var(--accent)]" strokeWidth={1.5} />{after}</span></div></div>;
 }
