@@ -13,6 +13,7 @@ export type Profile = {
   interests: string[];
   learningGoals: string;
   careerDirection: string;
+  portfolioPurpose: string;
   email?: string;
   avatar: string;
   socialLinks: SocialLink[];
@@ -65,10 +66,11 @@ export const profile: Profile = {
   major: "Ngôn ngữ và Văn hóa Nga",
   className: "25R1",
   school: "Trường Đại học Ngoại ngữ - Đại học Quốc gia Hà Nội",
-  bio: "Mình là sinh viên Khoa Ngôn ngữ và Văn hóa Nga. Qua portfolio này, mình ghi lại quá trình đi từ những thao tác số cơ bản đến cách tìm kiếm, cộng tác, sáng tạo và sử dụng AI có trách nhiệm.",
+  bio: "Mình là sinh viên lớp 25R1, Khoa Ngôn ngữ và Văn hóa Nga tại Trường Đại học Ngoại ngữ, Đại học Quốc gia Hà Nội. Việc học ngoại ngữ khiến mình quan tâm đến ngôn ngữ, văn hóa và cách con người giao tiếp trong những bối cảnh khác nhau. Portfolio này là nơi mình hệ thống lại hành trình rèn kỹ năng số, từ tổ chức tài liệu đến làm việc với AI, theo cách rõ ràng và có căn cứ.",
   interests: ["Nghe nhạc", "Múa"],
-  learningGoals: "Xây dựng nền tảng kỹ năng số vững chắc, biết kiểm chứng thông tin và sử dụng AI như một công cụ hỗ trợ thay vì phụ thuộc vào công cụ.",
-  careerDirection: "Kết hợp năng lực ngoại ngữ với kỹ năng số và AI để học tập, nghiên cứu và làm việc hiệu quả trong môi trường đa văn hóa.",
+  learningGoals: "Trong thời gian tới, mình muốn củng cố năng lực tiếng Nga đồng thời rèn kỹ năng tìm kiếm, chọn lọc và trình bày thông tin. Mình đặt mục tiêu đọc tài liệu chủ động hơn, diễn đạt có cấu trúc, kiểm tra lại dữ kiện trước khi nộp và sử dụng công cụ số đúng mục đích thay vì phụ thuộc vào công cụ.",
+  careerDirection: "Mình muốn phát triển theo hướng kết hợp ngoại ngữ với giao tiếp liên văn hóa và năng lực làm việc trong môi trường số. Quản lý tài liệu, cộng tác trực tuyến, thiết kế nội dung trực quan và sử dụng AI có trách nhiệm sẽ là bộ kỹ năng hỗ trợ cho việc học tập, nghiên cứu và công việc liên quan đến ngôn ngữ, văn hóa sau này.",
+  portfolioPurpose: "Portfolio tập hợp sáu bài thực hành thành một hồ sơ thống nhất, dễ xem và dễ đối chiếu. Mỗi bài cho thấy không chỉ sản phẩm cuối mà cả mục tiêu, quy trình, công cụ, kết quả, bài học và tài liệu gốc. Nhờ đó, mình có thể nhìn rõ tiến bộ của bản thân, nhận ra kỹ năng cần tiếp tục rèn và chia sẻ quá trình học một cách minh bạch.",
   avatar: "/avatar-oanh-white.png",
   socialLinks: [],
 };

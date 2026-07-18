@@ -2,13 +2,27 @@ import Image from "next/image";
 import { Sparkles } from "lucide-react";
 import { profile, siteContent } from "@/src/data/portfolio";
 import { Reveal } from "@/src/components/VisualEffects";
-import { ConstellationSkills, LivingEarth, MagneticLink, SolarFlareButton } from "@/src/components/SectionSignatures";
+import { LivingEarth, MagneticLink, SolarFlareButton } from "@/src/components/SectionSignatures";
 
-const skills = [
-  { name: "Tổ chức dữ liệu", detail: "Quản lý tệp có cấu trúc, đặt tên rõ ràng và biết khôi phục khi cần." },
-  { name: "Tư duy thông tin", detail: "Thiết kế từ khóa, đối chiếu và đánh giá nguồn trước khi sử dụng." },
-  { name: "Làm việc cùng AI", detail: "Viết prompt có bối cảnh, kiểm chứng và biên tập đầu ra." },
-  { name: "Cộng tác có trách nhiệm", detail: "Phân vai, chia sẻ tiến độ và minh bạch đóng góp của công cụ." },
+const learningPriorities = [
+  { label: "Tổ chức", detail: "Sắp xếp dữ liệu và ghi chú theo một cấu trúc dễ tìm lại." },
+  { label: "Kiểm chứng", detail: "Đối chiếu nguồn và kiểm tra dữ kiện trước khi sử dụng." },
+  { label: "Trình bày", detail: "Diễn đạt rõ ý, có căn cứ và tự rà soát trước khi nộp." },
+];
+
+const developmentPillars = [
+  "Năng lực ngoại ngữ",
+  "Giao tiếp liên văn hóa",
+  "Làm việc trong môi trường số",
+];
+
+const portfolioTopics = [
+  "Quản lý tệp tin",
+  "Nghiên cứu học thuật",
+  "Viết prompt hiệu quả",
+  "Cộng tác trực tuyến",
+  "Sáng tạo cùng AI",
+  "AI có trách nhiệm",
 ];
 
 export default function Home() {
@@ -18,39 +32,100 @@ export default function Home() {
         <div className="container home-hero-grid grid gap-10">
           <div className="hero-copy">
             <Reveal><p className="eyebrow">Digital portfolio {siteContent.portfolioYear}</p></Reveal>
-            <Reveal delay={.08}><h1 className="hero-title mt-7">Từ thao tác số đến <em>tư duy có trách nhiệm.</em></h1></Reveal>
-            <Reveal delay={.16}><p className="muted mt-8 max-w-[55ch] text-base leading-8 md:text-lg">Mình là {profile.name}, sinh viên ngành {profile.major}. Đây là hành trình mình học cách tổ chức dữ liệu, kiểm chứng thông tin, cộng tác và sử dụng AI có chủ đích.</p></Reveal>
-            <Reveal delay={.24}><div className="mt-9 flex flex-wrap gap-3"><MagneticLink href="/projects" className="btn-primary">Khám phá dự án</MagneticLink><a href="#about" className="btn">Tìm hiểu về mình</a></div></Reveal>
+            <Reveal delay={0.08}><h1 className="hero-title mt-7">Từ thao tác số đến <em>tư duy có trách nhiệm.</em></h1></Reveal>
+            <Reveal delay={0.16}><p className="muted mt-8 max-w-[55ch] text-base leading-8 md:text-lg">Mình là {profile.name}, sinh viên Khoa {profile.major}. Đây là hành trình mình kết nối năng lực ngoại ngữ với cách tổ chức dữ liệu, kiểm chứng thông tin, cộng tác và sử dụng AI có chủ đích.</p></Reveal>
+            <Reveal delay={0.24}><div className="mt-9 flex flex-wrap gap-3"><MagneticLink href="/projects" className="btn-primary">Khám phá dự án</MagneticLink><a href="#about" className="btn">Tìm hiểu về mình</a></div></Reveal>
           </div>
-          <Reveal className="hero-visual" delay={.12}>
+          <Reveal className="hero-visual" delay={0.12}>
             <SolarFlareButton />
             <div className="orbit-ring" />
             <div className="portrait-frame card-shell">
               <div className="card-core overflow-hidden p-2"><Image src={profile.avatar} alt={`Ảnh đại diện của ${profile.name}`} width={680} height={850} priority className="aspect-[4/5] w-full rounded-[18px] object-cover" /></div>
             </div>
-            <div className="hero-note"><div className="flex items-center justify-between text-sm font-semibold"><span>Một lát cắt cá nhân</span><Sparkles size={16} className="text-[var(--accent)]" strokeWidth={1.5} /></div><p className="muted mt-2 text-xs leading-5">Ngoài giờ học, mình yêu thích {profile.interests.join(" và ").toLowerCase()}.</p></div>
+            <div className="hero-note"><div className="flex items-center justify-between text-sm font-semibold"><span>Một lát cắt cá nhân</span><Sparkles size={16} className="text-[var(--accent)]" strokeWidth={1.5} /></div><p className="muted mt-2 text-xs leading-5">Âm nhạc và múa giúp mình giữ nhịp sáng tạo ngoài giờ học.</p></div>
           </Reveal>
         </div>
       </section>
 
-      <section id="about" className="thematic-section theme-earth section">
+      <section id="about" className="thematic-section theme-earth section home-introduction-section">
         <LivingEarth />
-        <div className="container home-about-grid grid gap-14">
-          <Reveal><p className="eyebrow">Về mình</p><h2 className="mt-5 max-w-md text-4xl font-semibold tracking-[-.06em] md:text-6xl">Một portfolio để thấy mình <span className="text-[var(--accent)]">học như thế nào.</span></h2></Reveal>
-          <Reveal delay={.1}><div className="space-y-8"><p className="max-w-2xl text-xl leading-9 text-[var(--muted-strong)]">{profile.bio}</p><div className="feature-grid"><div className="card-shell"><div className="card-core h-full p-6 md:p-8"><p className="text-sm font-semibold text-[var(--accent)]">Mục tiêu của portfolio</p><p className="mt-5 max-w-md text-2xl font-semibold leading-tight">Lưu lại sản phẩm, giải thích quá trình và tự đánh giá điều mình thực sự học được.</p></div></div><div className="card-shell"><div className="card-core h-full p-6"><p className="muted text-xs uppercase tracking-[.16em]">Thông tin</p><div className="mt-5"><div className="stat-line"><span className="muted text-sm">Mã sinh viên</span><strong className="text-right text-sm">{profile.studentId}</strong></div><div className="stat-line"><span className="muted text-sm">Lớp</span><strong className="text-right text-sm">{profile.className}</strong></div><div className="stat-line"><span className="muted text-sm">Khoa</span><strong className="text-right text-sm">{profile.major}</strong></div><div className="stat-line"><span className="muted text-sm">Trường</span><strong className="text-right text-sm">{profile.school}</strong></div><div className="stat-line"><span className="muted text-sm">Sở thích</span><strong className="text-right text-sm">{profile.interests.join(", ")}</strong></div></div></div></div></div></div></Reveal>
-        </div>
-      </section>
-
-      <section className="thematic-section theme-cyan section border-y border-white/10">
-        <div className="container home-skills-grid grid gap-14">
-          <Reveal><p className="eyebrow">Mục tiêu học tập</p><h2 className="mt-5 text-4xl font-semibold tracking-[-.06em] md:text-6xl">Không chỉ biết dùng, mà còn <span className="text-[var(--accent)]">biết vì sao.</span></h2><p className="muted mt-6 max-w-md leading-7">{profile.learningGoals}</p><p className="muted mt-4 max-w-md text-sm leading-7">Định hướng tiếp theo: {profile.careerDirection}</p></Reveal>
-          <ConstellationSkills skills={skills} />
-        </div>
-      </section>
-
-      <section className="thematic-section theme-sun section pt-4">
         <div className="container">
-          <Reveal><div className="card-shell solar-corona-card"><div className="card-core relative overflow-hidden p-8 md:p-16"><div className="solar-corona-glow" /><p className="eyebrow">Điểm tiếp theo</p><h2 className="relative mt-5 max-w-3xl text-4xl font-semibold tracking-[-.07em] md:text-7xl">Đọc trọn vẹn <span className="text-[var(--accent)]">sáu hồ sơ bài tập.</span></h2><p className="muted relative mt-6 max-w-xl leading-7">Mỗi hồ sơ có nội dung đã biên tập, minh chứng và file bài nộp đầy đủ hiển thị trực tiếp.</p><MagneticLink href="/projects" className="btn-primary relative mt-8">Khám phá dự án</MagneticLink></div></div></Reveal>
+          <div className="home-intro-composition">
+            <Reveal className="home-intro-main">
+              <p className="eyebrow">Chân dung học tập</p>
+              <h2 className="home-chapter-title">Giới thiệu ngắn</h2>
+              <p className="home-intro-lead">{profile.bio}</p>
+              <div className="home-interests" aria-label="Sở thích cá nhân">
+                <span className="home-interests-label">Nguồn năng lượng ngoài giờ học</span>
+                {profile.interests.map((interest) => <span className="home-interest" key={interest}>{interest}</span>)}
+              </div>
+            </Reveal>
+
+            <Reveal className="home-profile-index" delay={0.1}>
+              <p className="home-index-label">Hồ sơ học tập</p>
+              <dl className="home-profile-list">
+                <div><dt>Mã sinh viên</dt><dd>{profile.studentId}</dd></div>
+                <div><dt>Lớp</dt><dd>{profile.className}</dd></div>
+                <div><dt>Khoa</dt><dd>{profile.major}</dd></div>
+                <div><dt>Trường</dt><dd>{profile.school}</dd></div>
+              </dl>
+              <p className="home-profile-note">Mình xem mỗi bài thực hành như một bước nhỏ để hình thành cách học rõ ràng, chủ động và có trách nhiệm hơn.</p>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      <section className="thematic-section theme-cyan section home-development-section border-y border-white/10">
+        <div className="container">
+          <Reveal className="home-development-heading">
+            <p className="eyebrow">Quỹ đạo phát triển</p>
+            <h2>Học ngoại ngữ trong một môi trường <span>đang đổi mới.</span></h2>
+            <p>Đích đến của mình không chỉ là sử dụng được công cụ, mà là biết chọn công cụ phù hợp và chịu trách nhiệm với kết quả mình tạo ra.</p>
+          </Reveal>
+
+          <div className="home-development-grid">
+            <Reveal className="home-learning-chapter" delay={0.08}>
+              <article>
+                <header className="home-chapter-header"><span className="home-chapter-orb" aria-hidden="true" /><div><p>Trọng tâm hiện tại</p><h3>Mục tiêu học tập</h3></div></header>
+                <p className="home-chapter-copy">{profile.learningGoals}</p>
+                <ul className="learning-priority-list">
+                  {learningPriorities.map((priority) => <li key={priority.label}><span>{priority.label}</span><p>{priority.detail}</p></li>)}
+                </ul>
+              </article>
+            </Reveal>
+
+            <Reveal className="home-direction-chapter" delay={0.16}>
+              <article>
+                <header className="home-chapter-header"><span className="home-chapter-orb" aria-hidden="true" /><div><p>Đường dài</p><h3>Định hướng phát triển</h3></div></header>
+                <p className="home-chapter-copy">{profile.careerDirection}</p>
+                <ul className="development-pillar-list">
+                  {developmentPillars.map((pillar) => <li key={pillar}><i aria-hidden="true" /><span>{pillar}</span></li>)}
+                </ul>
+              </article>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      <section className="thematic-section theme-sun section home-portfolio-purpose">
+        <div className="container">
+          <Reveal>
+            <div className="portfolio-purpose-layout">
+              <div className="portfolio-purpose-copy">
+                <p className="eyebrow">Hồ sơ năng lực số</p>
+                <h2>Mục tiêu của <span>Portfolio</span></h2>
+                <p>{profile.portfolioPurpose}</p>
+                <MagneticLink href="/projects" className="btn-primary">Mở sáu hồ sơ bài tập</MagneticLink>
+              </div>
+
+              <div className="portfolio-topic-map" aria-label="Sáu nội dung chính của portfolio">
+                <div className="portfolio-topic-core" aria-hidden="true"><strong>06</strong><span>hồ sơ</span></div>
+                <ol className="portfolio-topic-list">
+                  {portfolioTopics.map((topic, index) => <li className={`portfolio-topic-${index + 1}`} key={topic}><span>{String(index + 1).padStart(2, "0")}</span><p>{topic}</p></li>)}
+                </ol>
+              </div>
+            </div>
+          </Reveal>
         </div>
       </section>
     </>
